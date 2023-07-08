@@ -1,11 +1,20 @@
-import './App.css';
-import Home from './Components/HomePage/HomePage';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import Main from "./components/Signup/Main";
+import Home from "./components/HomePage/Home";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <BrowserRouter>
+      {/* <ToastContainer position='top-center'/> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path='/about' element={<About/>}/>  */}
+        <Route path="/login" element={<Main />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
