@@ -1,6 +1,6 @@
-// import React, { useEffect, useState } from 'react'
-import { getCurrentUserDetail,  } from '../auth/authenticate'
-//isLoggedIn
+import React, { useEffect, useState } from 'react'
+import { getCurrentUserDetail, isLoggedIn } from '../auth/authenticate'
+
 const Home = () => {
 
   const currentUser = getCurrentUserDetail();

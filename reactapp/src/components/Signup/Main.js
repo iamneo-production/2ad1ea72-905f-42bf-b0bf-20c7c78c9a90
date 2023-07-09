@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Signup from "./Signup";
-import Login from "../LoginPage/Login";
+import Login from "./Login"
 import Panel from "./Panel";
 import "./Main.css";
 
