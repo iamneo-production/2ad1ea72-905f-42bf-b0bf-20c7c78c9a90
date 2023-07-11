@@ -7,7 +7,7 @@ We want to make contributing as easy as transparent as possible whether it is :
  * Proposing new features.
  * Submiting a fix.
  ## steps.
- 0. Initialize git.
+ 0. Initialize git for the first and last time.
   ```
     git init
  ```
@@ -17,25 +17,25 @@ We want to make contributing as easy as transparent as possible whether it is :
  ```
  2. Make change in the source code.
  3. Check it is working well in you local workspace.
- 4. check status
+ 4. Check status
  ```
     git status
  ```
- 4. Adds a change in the working directory to the staging area.
+ 5. Adds a change in the working directory to the staging area.
  ```
     git add .
 ```
- 4. Commit with message
+ 6. Commit with message
  ```
     git commit -m <your_commit_messages
 ```
-5. Push your to remote repository.
+7. Push your to remote repository.
 ```
     git push -u origin <your_branch_name>
 ```
-6. create a pull request.
-7. Finally, go to your repository in browser and click on `compare and pull requests`
-8. Then add a title and description to your pull request thats explain your precious effort.
-9. click on `Create Pull Request`
+8. Create a pull request.
+9. Finally, go to your repository in browser and click on `compare and pull requests`
+10. Then add a title and description to your pull request thats explain your precious effort.
+11. Click on `Create Pull Request`
 ### congratulation!
 You contributed to social Media project & sit relax wait for review. Thank you.
