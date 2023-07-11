@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "create-react-app": "^5.0.1",
     "env": "^0.0.2"
   }
 }
