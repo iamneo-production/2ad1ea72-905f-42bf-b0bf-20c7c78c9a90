@@ -14,9 +14,6 @@
 	<name>springapp</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
-	</properties>
-	<properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <sonar.organization>iamneo-production</sonar.organization>
@@ -79,9 +76,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-	</build>
-	<build>
-        <pluginManagement>
+		<pluginManagement>
             <plugins>
                 <plugin>
                     <groupId>org.sonarsource.scanner.maven</groupId>
@@ -90,6 +85,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-    </build>
+	</build>
 
 </project>
