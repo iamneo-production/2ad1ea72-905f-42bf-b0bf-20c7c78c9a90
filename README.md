@@ -7,6 +7,10 @@ We want to make contributing as easy as transparent as possible whether it is :
  * Proposing new features.
  * Submiting a fix.
  ## steps.
+ 0. Initialize git.
+  ```
+    git init
+ ```
  1. Pull code from Main branch.
  ```
     git pull origin main
@@ -17,10 +21,14 @@ We want to make contributing as easy as transparent as possible whether it is :
  ```
     git status
  ```
- 4. Add and then commit your changes
+ 4. Adds a change in the working directory to the staging area.
  ```
     git add .
-    git commit -m <your_commit_messages>
+    git commit -m <your_commit_messages
+```
+ 4. Commit with message
+ ```
+    git commit -m <your_commit_messages
 ```
 5. Push your to remote repository.
 ```
