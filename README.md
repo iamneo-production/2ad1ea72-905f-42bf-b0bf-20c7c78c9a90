@@ -24,7 +24,6 @@ We want to make contributing as easy as transparent as possible whether it is :
  4. Adds a change in the working directory to the staging area.
  ```
     git add .
-    git commit -m <your_commit_messages
 ```
  4. Commit with message
  ```
