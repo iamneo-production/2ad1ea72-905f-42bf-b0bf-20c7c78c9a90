@@ -14,15 +14,9 @@
 	<name>springapp</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <sonar.organization>iamneo-production</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.sources></sonar.sources>
-        <sonar.tests></sonar.tests>
-        <sonar.java.binaries>target</sonar.java.binaries>
-    </properties>
-	<dependencies>
+		<java.version>11</java.version>
+	</properties>
+		<dependencies>
 		<dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -76,15 +70,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.sonarsource.scanner.maven</groupId>
-                    <artifactId>sonar-maven-plugin</artifactId>
-                    <version>3.7.0.1746</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
 	</build>
 
 </project>
