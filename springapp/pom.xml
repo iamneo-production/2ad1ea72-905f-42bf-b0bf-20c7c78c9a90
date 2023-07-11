@@ -15,16 +15,14 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
-	</properties>
-	<properties>
-        <maven.compiler.source>8</maven.compiler.source>
+		<maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <sonar.organization>iamneo-production</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.sources></sonar.sources>
         <sonar.tests></sonar.tests>
         <sonar.java.binaries>target</sonar.java.binaries>
-    </properties>
+	</properties>
 	<dependencies>
 		<dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -80,16 +78,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.sonarsource.scanner.maven</groupId>
-                    <artifactId>sonar-maven-plugin</artifactId>
-                    <version>3.7.0.1746</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
-
 </project>
