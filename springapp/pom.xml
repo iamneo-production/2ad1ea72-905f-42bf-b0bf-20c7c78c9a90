@@ -9,14 +9,21 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.study</groupId>
-	<artifactId>springapp</artifactId>
+	<artifactId>iamneo-production_2ad1ea72-905f-42bf-b0bf-20c7c78c9a90</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springapp</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Project Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <sonar.organization>iamneo-production</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.sources>null</sonar.sources>
+        <sonar.tests>null</sonar.tests>
+        <sonar.java.binaries>target</sonar.java.binaries>
 	</properties>
-		<dependencies>
+	<dependencies>
 		<dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
