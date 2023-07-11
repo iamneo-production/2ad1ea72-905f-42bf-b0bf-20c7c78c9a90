@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Message = () => {
   return (
-    <div>Message</div>
+    <div>Addes message part</div>
   )
 }
