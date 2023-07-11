@@ -27,7 +27,7 @@ We want to make contributing as easy as transparent as possible whether it is :
 ```
  6. Commit with message
  ```
-    git commit -m <your_commit_messages
+    git commit -m <your_commit_messages>
 ```
 7. Push your to remote repository.
 ```
