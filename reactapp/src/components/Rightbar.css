@@ -1,0 +1,76 @@
+.rightbar {
+    flex: 3;
+    height: 70vh;
+    position: sticky;
+    top : 50px;
+    right: 0;
+    margin-top: 0;
+    
+
+    .rightbartitle {
+        color: black;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 5%;
+        
+    }
+    .rightbarusernames {
+        .rightbarusername{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 15px;
+        
+            .rightbarusernameLeft{
+                display: inline-flex;
+
+                .avatarIcon{
+                    color: white;
+                    background-color: #0073ffee;
+                    
+                    
+                }
+            .usernameInfo{
+                .username {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 8px;
+                    font-size: 15px;
+            }
+                .relation {
+                    color: gray;
+                    font-size: 12px;
+                    margin-left: 8px;
+
+                }
+
+            }
+
+        }
+        .follow_button {
+            color: #0073ffee;
+            font-weight: bold;
+            background-color: #f1f1f1;
+            border: 0;
+            margin-right: 5px;
+            font-family: 'Times New Roman';
+            font-size: 15px;
+
+            
+
+        }
+        .follow_button:hover{
+            background-color: #0073ffee;
+            color: white;
+            cursor: pointer;
+        }
+
+    }
+ }
+
+}
+
+@media only screen and (max-width: 768px){
+    .rightbar{
+        display: none;
+    }
+}
