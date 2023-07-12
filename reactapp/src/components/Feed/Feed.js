@@ -1,6 +1,6 @@
 import React from 'react'
-import { Posts } from "../data";
-import Post from "./Post"
+import { Posts } from "../../data";
+import Post from "../Post/Post"
 import "./Feed.css";
 
 

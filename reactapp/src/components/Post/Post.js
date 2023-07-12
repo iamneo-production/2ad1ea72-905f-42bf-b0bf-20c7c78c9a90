@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Post.css"
-import { Users } from "../data";
+import { Users } from "../../data";
 import { IconButton } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
