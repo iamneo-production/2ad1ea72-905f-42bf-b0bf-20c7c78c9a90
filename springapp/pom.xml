@@ -15,7 +15,13 @@
 	<description>Project Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
-		<sonar.sources>src/main/java</sonar.sources>
+		<maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <sonar.organization>iamneo-production</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.sources>null</sonar.sources>
+        <sonar.tests>null</sonar.tests>
+        <sonar.java.binaries>target</sonar.java.binaries>
 	</properties>
 	<dependencies>
 		<dependency>

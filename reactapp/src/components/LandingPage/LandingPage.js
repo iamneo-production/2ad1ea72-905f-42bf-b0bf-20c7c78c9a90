@@ -6,36 +6,53 @@ import logo from '../../assets/logo1.jpg';
 
 
 const LandingPage = () => {
-
+  const [isLoading, setIsLoading] = useState(true);
   const currentUser = getCurrentUserDetail();
   const platformName = 'SocialoGram';
   
+  useEffect(() => {
+    // Simulating loading time
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
   return (
     <div style={styles.container}>
-      <img src={logo} alt="Logo" style={styles.logo} />
-      {isLoggedIn() ? (
-        <>
-          <h2 style={styles.heading}>Welcome Back</h2>
-          {currentUser && (
-            <div style={styles.userContainer}>
-              <h1 style={styles.username}>{currentUser.name}</h1>
-            </div>
-          )}
-        </>
+      {isLoading ? (
+        <div style={styles.loader}>
+          <h2>Loading...</h2>
+        </div>
       ) : (
         <>
-          <h2 style={styles.heading}>Welcome to {platformName}</h2>
-          <h4 style={styles.description}>Explore and enjoy!</h4>
-          <div style={styles.buttonContainer}>
-            <Link to="/login">
-              <button style={styles.button}>Enter the Community</button>
-            </Link>
+          <div style={styles.logoContainer}>
+            <img src={logo} alt="Logo" style={styles.logo} />
           </div>
+          {isLoggedIn() ? (
+            <>
+              <h2 style={styles.heading}>Welcome Back</h2>
+              {currentUser && (
+                <div style={styles.userContainer}>
+                  <h1 style={styles.username}>{currentUser.name}</h1>
+                </div>
+              )}
+            </>
+          ) : (
+            <>
+              <h2 style={styles.heading}>Welcome to {platformName}</h2>
+              <p style={styles.description}>Explore and enjoy!</p>
+              <div style={styles.buttonContainer}>
+                <Link to="/login">
+                  <button style={styles.button}>Login</button>
+                </Link>
+              </div>
+            </>
+          )}
         </>
       )}
     </div>
-  )
-}
+  );
+};
 
 export default LandingPage
 
@@ -51,11 +68,19 @@ const styles = {
     borderRadius: '10px',
     boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)',
   },
-  logo: {
-    width: '20%',
-    height: '160px',
+  loader: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '200px',
+    fontSize: '20px',
+  },
+  logoContainer: {
     marginBottom: '20px',
-    borderRadius: '5px',
+  },
+  logo: {
+    width: '200px',
+    height: 'auto',
   },
   heading: {
     fontSize: '28px',
@@ -91,9 +116,4 @@ const styles = {
     boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.2)',
     transition: 'background-color 0.3s ease',
   },
-};
-
-// Button hover effect
-styles.button[':hover'] = {
-  backgroundColor: '#0056b3',
 };
