@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { getCurrentUserDetail, isLoggedIn } from '../auth/authenticate'
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+import logo from '../../assets/logo1.jpg';
+
+
+const LandingPage = () => {
 
   const currentUser = getCurrentUserDetail();
-  const platformName = 'Social Media';
+  const platformName = 'SocialoGram';
   
   return (
     <div style={styles.container}>
+      <img src={logo} alt="Logo" style={styles.logo} />
       {isLoggedIn() ? (
         <>
           <h2 style={styles.heading}>Welcome Back</h2>
@@ -24,7 +28,7 @@ const Home = () => {
           <h4 style={styles.description}>Explore and enjoy!</h4>
           <div style={styles.buttonContainer}>
             <Link to="/login">
-              <button classname='enter__btn' style={styles.button}>Enter the Community</button>
+              <button style={styles.button}>Enter the Community</button>
             </Link>
           </div>
         </>
@@ -33,7 +37,7 @@ const Home = () => {
   )
 }
 
-export default Home
+export default LandingPage
 
 // Styles
 const styles = {
@@ -46,6 +50,12 @@ const styles = {
     backgroundColor: '#f5f5f5',
     borderRadius: '10px',
     boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)',
+  },
+  logo: {
+    width: '20%',
+    height: '160px',
+    marginBottom: '20px',
+    borderRadius: '5px',
   },
   heading: {
     fontSize: '28px',

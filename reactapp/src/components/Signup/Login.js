@@ -5,6 +5,9 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getCurrentUserDetail, doLoggedIn } from '../auth/authenticate';
 
+import logo from '../../assets/logo1.jpg';
+
+
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -50,6 +53,7 @@ const Login = () => {
 
         return (
             <>
+                <img src={logo} alt="Logo" style={styles.logo} />
                 <form onSubmit={onSubmit} className="sign-in-form">
                     <h2 className="title">Sign in</h2>
                     <div className="input-field">
@@ -107,3 +111,13 @@ const Login = () => {
     };
 
     export default Login;
+
+    // Styles
+const styles = { 
+    logo: {
+        width: '40%',
+        height: '160px',
+        marginBottom: '20px',
+        borderRadius: '5px',
+      },
+}
