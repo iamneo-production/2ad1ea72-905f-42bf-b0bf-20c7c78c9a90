@@ -20,7 +20,7 @@ const Login = () => {
             return;
         }
         try {
-            const response = await fetch("https://ide-caafafebfadfbeacafdccaeaeaadbdbabf.project.examly.io/proxy/8080/api/authenticate", {
+            const response = await fetch("https://ide-eebfbcbbebdafecfbeacafdccaeaeaadbdbabf.project.examly.io/proxy/8080/api/authenticate", {
                 method: "POST",
                 credentials: 'include',
                 headers: {
