@@ -1,0 +1,15 @@
+
+Dcom.study.springapp.Dto.JwtAuthResponse#getToken()Ljava/lang/String;l
+b/home/coder/project/workspace/springapp/src/main/java/com/study/springapp/Dto/JwtAuthResponse.java ("1*³
+1	 (~
+|
+	 (
+%0java.lang.String"__id*R
+
+__unknown_file (6*4)
+'com.study.springapp.Dto.JwtAuthResponse"
+token"$
+ (
+
+%0java.lang.StringB+)
+'com.study.springapp.Dto.JwtAuthResponseH

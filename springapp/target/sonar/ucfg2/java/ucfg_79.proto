@@ -1,0 +1,22 @@
+
+Fcom.study.springapp.Dto.JwtAuthRequest#getUsername()Ljava/lang/String;k
+a/home/coder/project/workspace/springapp/src/main/java/com/study/springapp/Dto/JwtAuthRequest.java	 	("1*¶
+1
+	 
+(€
+~
+
+	 
+(
+%0java.lang.String"__id*T
+
+__unknown_file (8*6(
+&com.study.springapp.Dto.JwtAuthRequest"
+
+username"$
+
+ 
+(
+
+%0java.lang.StringB*(
+&com.study.springapp.Dto.JwtAuthRequestH
