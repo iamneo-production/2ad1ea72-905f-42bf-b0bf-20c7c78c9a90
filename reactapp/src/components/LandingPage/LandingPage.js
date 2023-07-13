@@ -43,7 +43,7 @@ const LandingPage = () => {
               <p style={styles.description}>Explore and enjoy!</p>
               <div style={styles.buttonContainer}>
                 <Link to="/login">
-                  <button style={styles.button}>Login</button>
+                  <button style={styles.button}>Enter the Community</button>
                 </Link>
               </div>
             </>
