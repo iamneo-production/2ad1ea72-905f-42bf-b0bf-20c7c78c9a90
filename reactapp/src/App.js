@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import Main from "./components/Signup/Main";
 import Home from "./components/Home/Home";
-
+import Settings from "./components/Settings/settings";
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* <Route path='/about' element={<About/>}/>  */}
         <Route path="/login" element={<Main />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
   );
