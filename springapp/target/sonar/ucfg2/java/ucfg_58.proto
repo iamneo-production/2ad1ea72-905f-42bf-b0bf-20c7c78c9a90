@@ -1,0 +1,56 @@
+
+=com.study.springapp.Dto.LoginDto#toString()Ljava/lang/String;e
+[/home/coder/project/workspace/springapp/src/main/java/com/study/springapp/Dto/LoginDto.java% %("1*ø
+1&	 &(w
+u
+& &(#
+%0java.lang.String"__id*K
+
+__unknown_file (/*-"
+ com.study.springapp.Dto.LoginDto"
+emailv
+t
+&	 &(#
+%1java.lang.String"__concat* 
+&	 &(
+LoginDto [email=*$
+& &(#
+
+%0java.lang.Stringq
+o
+&	 &(3
+%2java.lang.String"__concat*$
+&	 &(#
+
+%1java.lang.String*
+&& &(3
+, password=z
+x
+&6 &(>
+%3java.lang.String"__id*N
+
+__unknown_file (2*0"
+ com.study.springapp.Dto.LoginDto"
+
+passwordz
+x
+&	 &(>
+%4java.lang.String"__concat*$
+&	 &(3
+
+%2java.lang.String*$
+&6 &(>
+
+%3java.lang.Stringg
+e
+&	 &(D
+%5java.lang.String"__concat*$
+&	 &(>
+
+%4java.lang.String*
+&A &(D
+]"$
+& &(E
+
+%5java.lang.StringB$"
+ com.study.springapp.Dto.LoginDtoH
