@@ -1,2 +1,0 @@
-com.study.springapp.Entity.User#getAuthorities()Ljava/util/Collection;
-java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
