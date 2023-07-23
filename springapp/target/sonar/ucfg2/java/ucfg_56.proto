@@ -1,16 +1,0 @@
-
-@com.study.springapp.Dto.LoginDto#getPassword()Ljava/lang/String;e
-[/home/coder/project/workspace/springapp/src/main/java/com/study/springapp/Dto/LoginDto.java ("1*¯
-1	 (z
-x
-	 (
-%0java.lang.String"__id*N
-
-__unknown_file (2*0"
- com.study.springapp.Dto.LoginDto"
-
-password"$
- (
-
-%0java.lang.StringB$"
- com.study.springapp.Dto.LoginDtoH
