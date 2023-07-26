@@ -4,7 +4,7 @@ import EditProfileForm from '../../Components/EditProfileComponent/EditProfileFo
 const EditProfilePage = () => {
   return (
     <div className='py-10 px-5 lg:px-60'>
-        <EditProfileForm/>
+      <EditProfileForm />
     </div>
   )
 }
