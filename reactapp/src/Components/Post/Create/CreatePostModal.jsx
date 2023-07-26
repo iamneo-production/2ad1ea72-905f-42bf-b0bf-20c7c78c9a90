@@ -1,9 +1,7 @@
 import {
   Modal,
   ModalBody,
-  ModalCloseButton,
   ModalContent,
-  ModalHeader,
   ModalOverlay,
 } from "@chakra-ui/modal";
 
@@ -16,7 +14,7 @@ import { Button } from "@chakra-ui/button";
 import { useDispatch, useSelector } from "react-redux";
 import { createPost } from "../../../Redux/Post/Action";
 import { uploadToCloudinary } from "../../../Config/UploadToCloudinary";
-import CommentModal from "../../Comment/CommentModal";
+// import CommentModal from "../../Comment/CommentModal";
 
 
 
@@ -141,7 +139,7 @@ const CreatePostModal = ({ onOpen, isOpen, onClose }) => {
                     </div>
 
                     <label for="file-upload" className="custom-file-upload">
-                      Select from Computer
+                      Select from computer
                     </label>
                     <input
                       type="file"
@@ -199,6 +197,7 @@ const CreatePostModal = ({ onOpen, isOpen, onClose }) => {
                 <hr />
               </div>
             </div>
+
           </ModalBody>
         </ModalContent>
       </Modal>
