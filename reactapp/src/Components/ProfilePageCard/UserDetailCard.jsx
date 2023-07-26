@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { TbCircleDashed } from "react-icons/tb";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { followUserAction, unFollowUserAction } from "../../Redux/User/Action";
-// import { isReqUser } from '../../Config/Logic'
+import { isReqUser } from '../../Config/Logic'
 
 const UserDetailCard = ({ user, isRequser, isFollowing }) => {
-
   const token = localStorage.getItem("token");
   const { post } = useSelector((store) => store);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [isFollow,setIsFollow]=useState(false);
+  const [isFollow, setIsFollow] = useState(false);
 
   const goToAccountEdit = () => {
     navigate("/account/edit");
   };
 
   console.log("user --- ", user);
-  
 
   const data = {
     jwt: token,
@@ -35,24 +33,24 @@ const UserDetailCard = ({ user, isRequser, isFollowing }) => {
     dispatch(unFollowUserAction(data));
   };
 
-  useEffect(()=>{
-setIsFollow(isFollowing)
-  },[isFollowing])
+  useEffect(() => {
+    setIsFollow(isFollowing)
+  }, [isFollowing])
 
   return (
     <div className="py-10">
       <div className="flex items-center">
         <div className="w-[15%]">
-           <img
-          className="w-32 h-32 rounded-full"
-          src={
-            user?.image ||
-            "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-          }
-          alt=""
-        />
+          <img
+            className="w-32 h-32 rounded-full"
+            src={
+              user?.image ||
+              "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+            }
+            alt=""
+          />
         </div>
-       
+
 
         <div className="ml-10 space-y-5 text-xs">
           <div className=" flex space-x-10 items-center">
@@ -103,4 +101,5 @@ setIsFollow(isFollowing)
   );
 };
 
-export default UserDetailCard;
+
+export default UserDetailCard
