@@ -1,0 +1,18 @@
+
+Icom.study.springapp.model.Post#getUser()Lcom/study/springapp/dto/UserDto;e
+Y/home/coder/project/workspace/springapp/src/main/java/com/study/springapp/model/Post.java• •("1*Ï
+1
+–	 –(†
+ƒ
+
+–	 –(%
+%0com.study.springapp.dto.UserDto"__id*H
+
+__unknown_file (,** 
+com.study.springapp.model.Post"
+user"5
+
+– –('
+%
+%0com.study.springapp.dto.UserDtoB" 
+com.study.springapp.model.PostH

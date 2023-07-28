@@ -1,0 +1,2 @@
+com.study.springapp.controller.PostController#findAllPostByUserIds(Ljava/util/List;)LResponseEntity;
+null

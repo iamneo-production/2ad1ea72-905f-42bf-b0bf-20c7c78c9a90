@@ -1,0 +1,2 @@
+com.study.springapp.controller.CommentController#likeCommentHandler(Ljava/lang/Integer;Ljava/lang/String;)LResponseEntity;
+null

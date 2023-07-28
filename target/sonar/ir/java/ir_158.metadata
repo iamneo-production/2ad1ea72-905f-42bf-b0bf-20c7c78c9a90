@@ -1,0 +1,3 @@
+com.study.springapp.services.PostServiceImplementation#unSavePost(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/String;
+==
+findePostById com.study.springapp.services.PostServiceImplementation#findePostById(Ljava/lang/Integer;)LPost;

@@ -1,0 +1,194 @@
+
+:com.study.springapp.model.User#equals(Ljava/lang/Object;)Ze
+Y/home/coder/project/workspace/springapp/src/main/java/com/study/springapp/model/User.javaé é("startingBlock*–
+2
+ò ò(z
+x
+
+ò ò(
+%8java.lang.String"__id*L
+
+__unknown_file (0*. 
+com.study.springapp.model.User"
+
+username
+
+
+ò  ò(.
+%9java.lang.String"__id*S
+
+__unknown_file (7*5
+'
+othercom.study.springapp.model.User"
+
+usernameÿ
+ü
+
+ò ò(/
+%10boolean"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*1
+
+__unknown_file ("
+java.util.Objects*4
+
+__unknown_file (
+
+%8java.lang.String*4
+
+__unknown_file (
+
+%9java.lang.String*
+1*“
+startingBlock
+é é("
+Š
+
+è è(
+
+%11"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*5
+
+__unknown_file (
+
+objjava.lang.ObjectZ
+X
+
+é é(!
+objjava.lang.Object"__annotation*#
+
+__unknown_file (
+
+%11*
+
+7
+8
+10*
+4
+ñ/ ñ(6u
+s
+
+ñ> ñ(@
+%5java.lang.Integer"__id*F
+
+__unknown_file (**( 
+com.study.springapp.model.User"
+id|
+z
+
+ñB ñ(J
+%6java.lang.Integer"__id*M
+
+__unknown_file (1*/
+'
+othercom.study.springapp.model.User"
+id€
+ý
+
+ñ/ ñ(K
+%7boolean"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*1
+
+__unknown_file ("
+java.util.Objects*5
+
+__unknown_file (
+
+%5java.lang.Integer*5
+
+__unknown_file (
+
+%6java.lang.Integer*
+2
+1*Š
+5
+ð ð(t
+r
+
+ð ð('
+othercom.study.springapp.model.User"__id*5
+
+__unknown_file (
+
+objjava.lang.Objectw
+u
+
+ñ ñ(
+%2java.lang.String"__id*I
+
+__unknown_file (-*+ 
+com.study.springapp.model.User"
+email~
+|
+
+ñ ñ(*
+%3java.lang.String"__id*P
+
+__unknown_file (4*2
+'
+othercom.study.springapp.model.User"
+emailþ
+û
+
+ñ	 ñ(+
+%4boolean"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*1
+
+__unknown_file ("
+java.util.Objects*4
+
+__unknown_file (
+
+%2java.lang.String*4
+
+__unknown_file (
+
+%3java.lang.String*	
+2
+4
+1*%
+6
+ï
+ ï("
+
+ï ï(
+""*Ô
+7
+î î( 
+
+î î(
+%0java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*>
+
+__unknown_file (" 
+com.study.springapp.model.User2
+getClass()—”
+
+î î("
+%1java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*5
+
+__unknown_file (
+
+objjava.lang.Object2
+getClass()*
+5
+6*%
+8
+í
+ í("
+
+í í(
+""*&
+10
+ë
+ ë("
+
+ë ë(
+""*%
+1
+ñ ò(0"
+
+ñ ò(0
+"":%
+
+é é(!
+objjava.lang.ObjectB" 
+com.study.springapp.model.UserHP
