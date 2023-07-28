@@ -33,9 +33,9 @@ const HomePage = () => {
       setUserIds([reqUser?.id, ...newIds]);
       setSuggestedUser(suggetions(reqUser))
     }
-    // else {
-    //   navigate("/login")
-    // }
+    else {
+      navigate("/login")
+    }
     // else setUserIds([reqUser?.id])
 
   }, [reqUser])
@@ -53,8 +53,6 @@ const HomePage = () => {
     }
 
   }, [userIds, post.createdPost, post.deletedPost])
-
-  const storyUsers = hasStory(user.userByIds)
 
 
   return (
