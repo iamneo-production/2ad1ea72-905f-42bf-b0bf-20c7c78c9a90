@@ -29,7 +29,7 @@ public class JwtValidationFilter extends OncePerRequestFilter {
 			throws ServletException, IOException {
 	
 		
-		String jwt= request.getHeader(SecurityContest.HEADER);
+		String jwt= request.getHeader(SecurityContext.HEADER);
 
 		
 		if(jwt != null) {
@@ -39,7 +39,7 @@ public class JwtValidationFilter extends OncePerRequestFilter {
 				jwt = jwt.substring(7);
 
 				
-				SecretKey key= Keys.hmacShaKeyFor(SecurityContest.JWT_KEY.getBytes());
+				SecretKey key= Keys.hmacShaKeyFor(SecurityContext.JWT_KEY.getBytes());
 				
 				Claims claims= Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
 				

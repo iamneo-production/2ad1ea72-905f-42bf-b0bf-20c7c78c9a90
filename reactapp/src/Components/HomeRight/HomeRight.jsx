@@ -45,8 +45,6 @@ const HomeRight = ({suggestedUser}) => {
             <BsDot/>
             <span>Help</span>
             <BsDot/>
-            <span>Press</span>
-            <BsDot/>
             <span>API</span>
             <BsDot/>
             <span>Jobs</span>
@@ -55,13 +53,9 @@ const HomeRight = ({suggestedUser}) => {
             <BsDot/>
             <span>Terms</span>
             <BsDot/>
-            <span>Locations</span>
-            <BsDot/>
             <span>Language</span>
             <BsDot/>
             <span>English</span>
-            <BsDot/>
-            <span>Meta</span>
             <BsDot/>
             <span>Verified</span>
                 

@@ -6,7 +6,7 @@ import javax.crypto.SecretKey;
 
 import org.springframework.stereotype.Service;
 
-import com.study.springapp.config.SecurityContest;
+import com.study.springapp.config.SecurityContext;
 import com.study.springapp.model.User;
 
 import io.jsonwebtoken.Claims;
@@ -17,7 +17,7 @@ import io.jsonwebtoken.security.Keys;
 public class JwtTokenProvider {
 	
 	public JwtTokenClaims getClaimsFromToken(String token) {
-		SecretKey key= Keys.hmacShaKeyFor(SecurityContest.JWT_KEY.getBytes());
+		SecretKey key= Keys.hmacShaKeyFor(SecurityContext.JWT_KEY.getBytes());
 		
 	    Claims claims = Jwts.parser()
 	            .setSigningKey(key)
@@ -32,7 +32,7 @@ public class JwtTokenProvider {
 	}
 	
 	public String  generateJwtToken(User user) {
-		SecretKey key=Keys.hmacShaKeyFor(SecurityContest.JWT_KEY.getBytes());
+		SecretKey key=Keys.hmacShaKeyFor(SecurityContext.JWT_KEY.getBytes());
 		
 		String jwt=Jwts.builder()
 				.setIssuer("Virtusa Internship")

@@ -30,7 +30,7 @@ public class JwtGenratorFilter extends OncePerRequestFilter {
 		Authentication authentication=SecurityContextHolder.getContext().getAuthentication();
 		
 		if(authentication!=null) {
-			SecretKey key=Keys.hmacShaKeyFor(SecurityContest.JWT_KEY.getBytes());
+			SecretKey key=Keys.hmacShaKeyFor(SecurityContext.JWT_KEY.getBytes());
 			
 			String jwt=Jwts.builder()
 					.setIssuer("Virtusa Internship")
@@ -41,7 +41,7 @@ public class JwtGenratorFilter extends OncePerRequestFilter {
 					.signWith(key).compact();
 			
 			
-			response.setHeader(SecurityContest.HEADER, jwt);
+			response.setHeader(SecurityContext.HEADER, jwt);
 		}
 		
 		filterChain.doFilter(request, response);

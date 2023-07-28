@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 import HomeRight from "../../Components/HomeRight/HomeRight";
 import PostCard from "../../Components/Post/PostCard/PostCard";
 // import PostCard from "../../Components/PostCard/PostCard";
-// import StoryCircle from "../../Components/Story/StoryCircle/StoryCircle";
 
-import { hasStory, suggetions, timeDifference } from "../../Config/Logic";
+import { suggetions, timeDifference } from "../../Config/Logic";
 import { findUserPost } from "../../Redux/Post/Action";
 import { findByUserIdsAction, getUserProfileAction } from "../../Redux/User/Action";
 import "./HomePage.css";
@@ -33,9 +32,9 @@ const HomePage = () => {
       setUserIds([reqUser?.id, ...newIds]);
       setSuggestedUser(suggetions(reqUser))
     }
-    // else {
-    //   navigate("/login")
-    // }
+    else {
+      navigate("/login")
+    }
     // else setUserIds([reqUser?.id])
 
   }, [reqUser])
@@ -53,9 +52,6 @@ const HomePage = () => {
     }
 
   }, [userIds, post.createdPost, post.deletedPost])
-
-  const storyUsers = hasStory(user.userByIds)
-
 
   return (
     <div className=" ">
