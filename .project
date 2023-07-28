@@ -22,7 +22,11 @@
 	</natures>
 	<filteredResources>
 		<filter>
+<<<<<<< HEAD
 			<id>1688628180965</id>
+=======
+			<id>1682930848487</id>
+>>>>>>> d4a693242b586124ff29128fcd2908e6cef8bf16
 			<name></name>
 			<type>30</type>
 			<matcher>
@@ -32,3 +36,48 @@
 		</filter>
 	</filteredResources>
 </projectDescription>
+<<<<<<< HEAD
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>iamneo-production_2ad1ea72-905f-42bf-b0bf-20c7c78c9a90</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+	</natures>
+	<filteredResources>
+		<filter>
+<<<<<<< HEAD
+			<id>1688891169318</id>
+=======
+			<id>1687958721943</id>
+>>>>>>> 164ce9bf0fd22e37b48e2c161af504b22f61757a
+			<name></name>
+			<type>30</type>
+			<matcher>
+				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+<<<<<<< HEAD
+				<arguments>node_modules|\.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
+=======
+				<arguments>node_modules|.git|__CREATED_BY_JAVA_LANGUAGE_SERVER__</arguments>
+>>>>>>> 164ce9bf0fd22e37b48e2c161af504b22f61757a
+			</matcher>
+		</filter>
+	</filteredResources>
+</projectDescription>
+>>>>>>> d4a693242b586124ff29128fcd2908e6cef8bf16
