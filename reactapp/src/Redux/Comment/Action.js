@@ -2,7 +2,7 @@ import { CREATE_COMMENT, LIKE_COMMENT, UNLIKE_COMMENT } from "./ActionType";
 
 export const createComment = (data) => async (dispatch) => {
   console.log("data create comment", data.jwt)
-  const res = await fetch(`http://localhost:5454/api/comments/create/${data.postId}`, {
+  const res = await fetch(`https://ide-eebfbcbbebdafecfbeacafdccaeaeaadbdbabf.project.examly.io/proxy/8080/api/comments/create/${data.postId}`, {
     method: "POST",
 
     headers: {
@@ -22,7 +22,7 @@ export const createComment = (data) => async (dispatch) => {
 
 
 export const findPostComment = (data) => async (dispatch) => {
-  const res = await fetch(`http://localhost:5454/api/comments/${data.postId}`, {
+  const res = await fetch(`https://ide-eebfbcbbebdafecfbeacafdccaeaeaadbdbabf.project.examly.io/proxy/8080/api/comments/${data.postId}`, {
     method: "GET",
 
     headers: {
@@ -36,7 +36,7 @@ export const findPostComment = (data) => async (dispatch) => {
 }
 
 export const likeComment = (data) => async (dispatch) => {
-  const res = await fetch(`http://localhost:5454/api/comments/like/${data.commentId}`, {
+  const res = await fetch(`https://ide-eebfbcbbebdafecfbeacafdccaeaeaadbdbabf.project.examly.io/proxy/8080/api/comments/like/${data.commentId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export const likeComment = (data) => async (dispatch) => {
 }
 
 export const unLikeComment = (data) => async (dispatch) => {
-  const res = await fetch(`http://localhost:5454/api/comments/unlike/${data.commentId}`, {
+  const res = await fetch(`https://ide-eebfbcbbebdafecfbeacafdccaeaeaadbdbabf.project.examly.io/proxy/8080/api/comments/unlike/${data.commentId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
