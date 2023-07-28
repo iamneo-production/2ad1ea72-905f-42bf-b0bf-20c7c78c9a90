@@ -18,11 +18,11 @@
 		<java.version>11</java.version>
 		<maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <!-- <sonar.organization>iamneo-production</sonar.organization>
+        <sonar.organization>iamneo-production</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.sources></sonar.sources>
         <sonar.tests></sonar.tests>
-        <sonar.java.binaries>target</sonar.java.binaries> -->
+        <sonar.java.binaries>target</sonar.java.binaries>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -100,11 +100,11 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!-- <plugin>
+			<plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
 				<version>3.7.0.1746</version>
-			</plugin> -->
+			</plugin>
 		</plugins>
 	</build>
 
