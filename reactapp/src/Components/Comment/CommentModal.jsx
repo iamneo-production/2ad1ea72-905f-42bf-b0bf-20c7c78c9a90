@@ -39,11 +39,11 @@ const CommentModal = ({
 }) => {
   const dispatch = useDispatch();
   const jwt = localStorage.getItem("token");
-  const { post,comments } = useSelector((store) => store);
+  const { post, comments } = useSelector((store) => store);
   const [commentContent, setCommentContent] = useState("");
   const { postId } = useParams();
-  const navigate=useNavigate();
-// console.log("comments :",comments)
+  const navigate = useNavigate();
+  // console.log("comments :",comments)
   useEffect(() => {
     dispatch(
       findPostByIdAction({
@@ -51,7 +51,7 @@ const CommentModal = ({
         postId,
       })
     );
-  }, [postId,comments?.createdComment]);
+  }, [postId, comments?.createdComment]);
 
   const handleAddComment = () => {
     const data = {
@@ -72,11 +72,11 @@ const CommentModal = ({
   const handleOnEnterPress = (e) => {
     if (e.key === "Enter") {
       handleAddComment();
-      
+
     } else return;
   };
 
-  const handleClose=()=>{
+  const handleClose = () => {
     onClose()
     navigate("/")
   }
