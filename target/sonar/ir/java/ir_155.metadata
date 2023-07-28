@@ -1,4 +1,0 @@
-com.study.springapp.services.PostServiceImplementation#deletePost(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/String;
-null
-==
-findePostById com.study.springapp.services.PostServiceImplementation#findePostById(Ljava/lang/Integer;)LPost;

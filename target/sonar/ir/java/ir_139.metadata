@@ -1,2 +1,0 @@
-com.study.springapp.controller.PostController#findPostByUserIdHandler(Ljava/lang/Integer;)LResponseEntity;
-null

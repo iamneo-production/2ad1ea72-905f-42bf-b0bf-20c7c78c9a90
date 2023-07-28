@@ -1,3 +1,0 @@
-com.study.springapp.services.CommentsServiceImplement#unlikeComment(Ljava/lang/Integer;Ljava/lang/Integer;)LComments;
-==
-findCommentById com.study.springapp.services.CommentsServiceImplement#findCommentById(Ljava/lang/Integer;)LComments;

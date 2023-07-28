@@ -1,4 +1,0 @@
-com.study.springapp.controller.PostController#savedPostHandler(Ljava/lang/String;Ljava/lang/Integer;)LResponseEntity;
-null
-com.study.springapp.response.MessageResponse#instance-init#
-com.study.springapp.response.MessageResponse#<init>(Ljava/lang/String;)V

@@ -1,15 +1,0 @@
-
-Rcom.study.springapp.exception.ErrorDetails#getTimestamp()Ljava/time/LocalDateTime;o
-e/home/coder/project/workspace/springapp/src/main/java/com/study/springapp/exception/ErrorDetails.java& &(""1* 
-1'	 '(ç
-ä
-'	 '(
-%0java.time.LocalDateTime"__id*Y
-
-__unknown_file (=*;,
-*com.study.springapp.exception.ErrorDetails"
-	timestamp"+
-' '(
-
-%0java.time.LocalDateTimeB.,
-*com.study.springapp.exception.ErrorDetailsH

@@ -1,4 +1,0 @@
-com.study.springapp.services.PostServiceImplementation#likePost(Ljava/lang/Integer;Ljava/lang/Integer;)LPost;
-null
-==
-findePostById com.study.springapp.services.PostServiceImplementation#findePostById(Ljava/lang/Integer;)LPost;

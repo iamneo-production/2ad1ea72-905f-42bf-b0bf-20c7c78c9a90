@@ -1,5 +1,0 @@
-com.study.springapp.services.UserUserDetailService#loadUserByUsername(Ljava/lang/String;)LUserDetails;
-java.util.ArrayList#<init>()V
-null
-java.util.Optional#isPresent()Z
-java.util.Optional#get()Ljava/lang/Object;
