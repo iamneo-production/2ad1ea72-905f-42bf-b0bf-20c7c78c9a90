@@ -2,6 +2,7 @@
 https://sonarcloud.io/summary/overall?id=examly-test_2ad1ea72-905f-42bf-b0bf-20c7c78c9a90
 
 ## How to contribute ?
+
 We want to make contributing as easy as transparent as possible whether it is :
  * Reporting a bug.
  * Proposing new features.
