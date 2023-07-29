@@ -229,11 +229,13 @@ public class UserServiceImplementation implements UserService {
 			existingUser.setImage(updatedUser.getImage());
 		}
 		
+		
 		if(!updatedUser.getId().equals(existingUser.getId())) {
 			throw new UserException("you can't update another user"); 
 		}
 		System.out.println(updatedUser.getId());
 		System.out.println(existingUser.getId());
+		
 		
 		return repo.save(existingUser);
 		

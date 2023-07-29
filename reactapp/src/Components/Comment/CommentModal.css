@@ -1,4 +1,6 @@
 .comments{
+    /* overflow-y-scroll max-h-[50vh] */
+
     overflow-y: scroll;
     max-height: 40vh;
 
