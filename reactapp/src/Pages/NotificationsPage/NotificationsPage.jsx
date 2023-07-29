@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
+import axios from 'axios';
 
 const Container = styled.div`
   display: flex;
@@ -36,6 +37,7 @@ const NotificationItem = styled.li`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
   }
+  cursor: pointer;
 `;
 
 const NotificationContent = styled.p`
@@ -44,22 +46,46 @@ const NotificationContent = styled.p`
   font-size: 1.2rem;
 `;
 
+const NotificationDetails = styled.div`
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+`;
+
+const NotificationDetailsHeading = styled.h3`
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+`;
+
+const NotificationDetailsContent = styled.p`
+  color: #555555;
+  font-size: 1rem;
+`;
+
 const NotificationPage = () => {
-  const notifications = [
-    {
-      id: 1,
-      content: 'You have a new follower: John Doe',
-    },
-    {
-      id: 2,
-      content: 'Jane Smith liked your post',
-    },
-    {
-      id: 3,
-      content: 'Alex Johnson commented on your photo',
-    },
-    // Add more notifications as needed
-  ];
+  const [notifications, setNotifications] = useState([]);
+  const [selectedNotification, setSelectedNotification] = useState(null);
+
+  useEffect(() => {
+    fetchNotifications();
+  }, []);
+
+  const fetchNotifications = async () => {
+    try {
+      // Replace '1' with the logged-in user's ID
+      const userId = 1;
+      const response = await axios.get(`/api/notifications/user/${userId}`);
+      setNotifications(response.data);
+    } catch (error) {
+      console.log('Error fetching notifications:', error);
+    }
+  };
+
+  const handleNotificationClick = (notification) => {
+    setSelectedNotification(notification);
+  };
 
   return (
     <Container>
@@ -67,13 +93,19 @@ const NotificationPage = () => {
         <NotificationsHeading>Notifications</NotificationsHeading>
         <NotificationList>
           {notifications.map((notification) => (
-            <NotificationItem key={notification.id}>
+            <NotificationItem key={notification.id} onClick={() => handleNotificationClick(notification)}>
               <NotificationContent>{notification.content}</NotificationContent>
             </NotificationItem>
           ))}
         </NotificationList>
       </NotificationsContainer>
-      {/* Add notification details or content section here */}
+      {selectedNotification && (
+        <NotificationDetails>
+          <NotificationDetailsHeading>Notification Details</NotificationDetailsHeading>
+          <NotificationDetailsContent>{selectedNotification.content}</NotificationDetailsContent>
+          {/* Add more details here based on your notification data */}
+        </NotificationDetails>
+      )}
     </Container>
   );
 };

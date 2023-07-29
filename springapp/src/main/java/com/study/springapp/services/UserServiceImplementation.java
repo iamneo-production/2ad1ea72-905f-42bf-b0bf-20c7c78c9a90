@@ -1,5 +1,6 @@
 package com.study.springapp.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,15 +54,13 @@ public class UserServiceImplementation implements UserService {
 		
 		String encodedPassword=passwordEncoder.encode(user.getPassword());
 		
-		User newUser=new User();
-		
+		User newUser=new User();	
 		newUser.setEmail(user.getEmail());
 		newUser.setPassword(encodedPassword);
 		newUser.setUsername(user.getUsername());
 		newUser.setName(user.getName());
 		
-		return repo.save(newUser);
-		
+		return repo.save(newUser);	
 	}
 
 	
@@ -77,7 +76,6 @@ public class UserServiceImplementation implements UserService {
 		throw new UserException("user not found with userid :"+userId);
 	}
 	
-
 	@Override
 	public String followUser(Integer reqUserId, Integer followUserId) throws UserException {
 		User followUser=findUserById(followUserId);
@@ -100,8 +98,7 @@ public class UserServiceImplementation implements UserService {
 		
 		
 		followUser.getFollower().add(follower);
-		reqUser.getFollowing().add(following);
-		
+		reqUser.getFollowing().add(following);	
 		repo.save(followUser);
 		repo.save(reqUser);
 		
@@ -111,8 +108,7 @@ public class UserServiceImplementation implements UserService {
 
 	@Override
 	public String unfollowUser(Integer reqUserId, Integer unfollowUserId) throws UserException {
-
-		
+	
 		User unfollowUser=findUserById(unfollowUserId);
 		
 		User reqUser=findUserById(reqUserId);
@@ -124,50 +120,31 @@ public class UserServiceImplementation implements UserService {
 		unfollow.setName(reqUser.getName());
 		unfollow.setUserImage(reqUser.getImage());
 		
-	
 		UserDto following=new UserDto();
 		following.setEmail(unfollowUser.getEmail());
 		following.setUsername(unfollowUser.getUsername());
 		following.setId(unfollowUser.getId());
 		following.setName(unfollowUser.getName());
 		following.setUserImage(unfollowUser.getImage());
-		
-		
+				
 		unfollowUser.getFollower().remove(unfollow);
-
 		repo.save(reqUser);
 		
 		return "you have unfollow "+unfollowUser.getUsername();
-		
-
 	}
-
-
+	
 	@Override
 	public User findUserProfile(String token) throws UserException {
 
-		token=token.substring(7);
-		
+		token=token.substring(7);	
 	    JwtTokenClaims jwtTokenClaims = jwtTokenProvider.getClaimsFromToken(token);
-
-	    String username = jwtTokenClaims.getUsername();
-	    
-	    Optional<User> opt = repo.findByEmail(username);
-	    
+	    String username = jwtTokenClaims.getUsername();   
+	    Optional<User> opt = repo.findByEmail(username);   
 	    if(opt.isPresent()) {
-
-	    	
-	    	return opt.get();
-	    	
+	    	return opt.get();  	
 	    }
-		
 	    throw new UserException("user not exist with email : "+username);
-
-
-	    
-		
 	}
-
 
 	@Override
 	public User findUserByUsername(String username) throws UserException {
@@ -185,8 +162,7 @@ public class UserServiceImplementation implements UserService {
 
 	@Override
 	public List<User> findUsersByUserIds(List<Integer> userIds) {
-		List<User> users= repo.findAllUserByUserIds(userIds);
-		
+		List<User> users= repo.findAllUserByUserIds(userIds);	
 		return users;
 	}
 
@@ -199,7 +175,6 @@ public class UserServiceImplementation implements UserService {
 		}
 		return users;
 	}
-
 
 	@Override
 	public User updateUserDetails(User updatedUser, User existingUser) throws UserException {

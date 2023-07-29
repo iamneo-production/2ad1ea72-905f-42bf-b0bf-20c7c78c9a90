@@ -58,11 +58,9 @@ public class User {
 	}
 	
 
-	
-
 	public User(Integer id, String username, String email, String name, String mobile, String website, String bio,
 			String gender, String image, String password, Set<UserDto> follower, Set<UserDto> following,
-			 List<Post> savedPost) {
+			List<Post> savedPost) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -145,19 +143,13 @@ public class User {
 		this.username = username;
 	}
 
-
-
-
 	public String getEmail() {
 		return email;
 	}
 
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 
 	public String getPassword() {
 		return password;
@@ -174,59 +166,46 @@ public class User {
 		return follower;
 	}
 
-
-
 	public void setFollower(Set<UserDto> follower) {
 		this.follower = follower;
 	}
-
 
 	public Set<UserDto> getFollowing() {
 		return following;
 	}
 
-
 	public void setFollowing(Set<UserDto> following) {
 		this.following = following;
 	}
-
-
-	
-
-
-
-	
-
-
-	
-
 
 	public List<Post> getSavedPost() {
 		return savedPost;
 	}
 
-
-
-
 	public void setSavedPost(List<Post> savedPost) {
 		this.savedPost = savedPost;
 	}
 
-
-
+	
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password
-				+ ", follower=" + follower + ", following=" + following +  "]";
+		return "User [id=" + id + ", username=" + username + ", email=" + email + ", name=" + name + ", mobile="
+				+ mobile + ", website=" + website + ", bio=" + bio + ", gender=" + gender + ", image=" + image
+				+ ", password=" + password + ", follower=" + follower + ", following=" + following + ", savedPost="
+				+ savedPost + ", getImage()=" + getImage() + ", getName()="
+				+ getName() + ", getMobile()=" + getMobile() + ", getWebsite()=" + getWebsite() + ", getBio()="
+				+ getBio() + ", getGender()=" + getGender() + ", getId()=" + getId() + ", getUsername()="
+				+ getUsername() + ", getEmail()=" + getEmail() + ", getPassword()=" + getPassword() + ", getFollower()="
+				+ getFollower() + ", getFollowing()=" + getFollowing() + ", getSavedPost()=" + getSavedPost()
+				+ ", hashCode()=" + hashCode() + ", getClass()=" + getClass() + ", toString()=" + super.toString()
+				+ "]";
 	}
-
-
-
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(email, id, username);
+		return Objects.hash(bio, email, follower, following, gender, id, image, mobile, name,
+				password, savedPost, username, website);
 	}
 
 	@Override
@@ -238,10 +217,14 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		return Objects.equals(email, other.email) && Objects.equals(id, other.id)
-				&& Objects.equals(username, other.username);
+		return Objects.equals(bio, other.bio) 
+				&& Objects.equals(email, other.email) && Objects.equals(follower, other.follower)
+				&& Objects.equals(following, other.following) && Objects.equals(gender, other.gender)
+				&& Objects.equals(id, other.id) && Objects.equals(image, other.image)
+				&& Objects.equals(mobile, other.mobile) && Objects.equals(name, other.name)
+				&& Objects.equals(password, other.password)
+				&& Objects.equals(savedPost, other.savedPost) && Objects.equals(username, other.username)
+				&& Objects.equals(website, other.website);
 	}
-	
-	
 	
 }

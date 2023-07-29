@@ -1,5 +1,5 @@
 import React from 'react';
-import "./ReqUserPostCard.css";
+import "./ReqUserPostcard.css";
 import { AiFillHeart } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
 
