@@ -21,7 +21,6 @@ const HomeRight = ({ suggestedUser }) => {
               <p className="opacity-70">{user.reqUser?.username}</p>
             </div>
           </div>
-          <p className="text-blue-600 font-semibold">switch</p>
         </div>
         <div className="flex justify-between py-5 items-center">
           <p className="font-semibold opacity-70">Suggestions for you</p>
