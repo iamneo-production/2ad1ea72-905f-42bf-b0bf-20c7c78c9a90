@@ -17,7 +17,7 @@ function ChangeProfilePhotoModal({
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader textAlign={"center"}>Change your Picture</ModalHeader>
+          <ModalHeader textAlign={"center"}>Upload a new one./ModalHeader </ModalHeader>
 
           <ModalBody>
             <div className="flex flex-col items-center">

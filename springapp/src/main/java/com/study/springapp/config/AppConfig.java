@@ -49,7 +49,7 @@ public class AppConfig {
 				cfg.setAllowedOrigins(Arrays.asList(
 						"http://localhost:3000", 
 						"http://localhost:4000",
-						"https://8080-caafafebfadfbeacafdccaeaeaadbdbabf.project.examly.io"));
+						"https://8081-eebfbcbbebdafecfbeacafdccaeaeaadbdbabf.project.examly.io/"));
 				cfg.setAllowedMethods(Collections.singletonList("*"));
 				cfg.setAllowCredentials(true);
 				cfg.setAllowedHeaders(Collections.singletonList("*"));
