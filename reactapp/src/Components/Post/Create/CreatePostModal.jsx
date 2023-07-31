@@ -1,9 +1,7 @@
 import {
   Modal,
   ModalBody,
-  ModalCloseButton,
   ModalContent,
-  ModalHeader,
   ModalOverlay,
 } from "@chakra-ui/modal";
 
@@ -16,7 +14,7 @@ import { Button } from "@chakra-ui/button";
 import { useDispatch, useSelector } from "react-redux";
 import { createPost } from "../../../Redux/Post/Action";
 import { uploadToCloudinary } from "../../../Config/UploadToCloudinary";
-import CommentModal from "../../Comment/CommentModal";
+// import CommentModal from "../../Comment/CommentModal";
 
 
 
@@ -24,12 +22,12 @@ const CreatePostModal = ({ onOpen, isOpen, onClose }) => {
   const finalRef = React.useRef(null);
   const [file, setFile] = useState(null);
   const [isDragOver, setIsDragOver] = useState(false);
-  
-  const dispatch=useDispatch();
-  const token=localStorage.getItem("token");
-  const {user}=useSelector(store=>store)
 
-  const [postData, setPostData] = useState({ image: '', caption: '',location:"" });
+  const dispatch = useDispatch();
+  const token = localStorage.getItem("token");
+  const { user } = useSelector(store => store)
+
+  const [postData, setPostData] = useState({ image: '', caption: '', location: "" });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -61,7 +59,7 @@ const CreatePostModal = ({ onOpen, isOpen, onClose }) => {
     setIsDragOver(false);
   }
 
-  const handleOnChange = async(e) => {
+  const handleOnChange = async (e) => {
     console.log(e.target.value);
 
     const file = e.target.files[0];
@@ -71,7 +69,7 @@ const CreatePostModal = ({ onOpen, isOpen, onClose }) => {
     ) {
       setFile(file);
       const url = await uploadToCloudinary(file);
-      setPostData((prevValues)=>({...prevValues, image:url}));
+      setPostData((prevValues) => ({ ...prevValues, image: url }));
     } else {
       setFile(null);
       alert("Please select an image/video file.");
@@ -79,15 +77,15 @@ const CreatePostModal = ({ onOpen, isOpen, onClose }) => {
   };
 
   const handleSubmit = async () => {
-    const data={
-      jwt:token,
-      data:postData,
+    const data = {
+      jwt: token,
+      data: postData,
     }
-    if(token){
+    if (token) {
       dispatch(createPost(data));
       onClose();
     }
-    
+
     console.log("data --- ", data);
   };
 
@@ -122,7 +120,7 @@ const CreatePostModal = ({ onOpen, isOpen, onClose }) => {
           <hr className="hrLine" />
 
           <ModalBody>
-         
+
             <div className="modalBodyBox flex h-[70vh] justify-between">
               <div className="w-[50%]">
                 {!file && (
@@ -134,9 +132,8 @@ const CreatePostModal = ({ onOpen, isOpen, onClose }) => {
                   >
                     <div className="flex justify-center flex-col items-center">
                       <FaPhotoVideo
-                        className={`text-3xl ${
-                          isDragOver ? "text-blue-800" : ""
-                        }`}
+                        className={`text-3xl ${isDragOver ? "text-blue-800" : ""
+                          }`}
                       />
                       <p>Drag photos or videos here </p>
                     </div>
@@ -204,7 +201,7 @@ const CreatePostModal = ({ onOpen, isOpen, onClose }) => {
           </ModalBody>
         </ModalContent>
       </Modal>
-      
+
     </div>
   );
 };

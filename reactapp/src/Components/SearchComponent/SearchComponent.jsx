@@ -5,9 +5,9 @@ import { searchUserAction } from "../../Redux/User/Action";
 import "./SearchComponent.css";
 import SearchUserCard from "./SearchUserCard";
 
-const SearchComponent = ({setIsSearchVisible}) => {
+const SearchComponent = ({ setIsSearchVisible }) => {
   const token = localStorage.getItem("token");
-  const {user}=useSelector(store=>store);
+  const { user } = useSelector(store => store);
   const dispatch = useDispatch();
   const handleSearchUser = (query) => {
     const data = {
@@ -18,7 +18,7 @@ const SearchComponent = ({setIsSearchVisible}) => {
   };
   const debouncedHandleSearchUser = debounce(handleSearchUser, 1000);
 
-// Call debouncedHandleSearchUser with a query string
+  // Call debouncedHandleSearchUser with a query string
 
   return (
     <div className="search-container">
@@ -26,7 +26,7 @@ const SearchComponent = ({setIsSearchVisible}) => {
         <h1 className="text-xl pb-5">Search</h1>
 
         <input
-          onChange={(e) =>debouncedHandleSearchUser(e.target.value)}
+          onChange={(e) => debouncedHandleSearchUser(e.target.value)}
           className="search-input"
           type="text"
           placeholder="Search..."
@@ -36,7 +36,7 @@ const SearchComponent = ({setIsSearchVisible}) => {
       <hr />
       <div className="px-3 pt-5">
         {user.searchResult.map((item) => (
-          <SearchUserCard setIsSearchVisible={setIsSearchVisible} key={item.id} username={item.username} image={item?.image}/>
+          <SearchUserCard setIsSearchVisible={setIsSearchVisible} key={item.id} username={item.username} image={item?.image} />
         ))}
       </div>
     </div>

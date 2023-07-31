@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.study.springapp.exception.UserException;
 import com.study.springapp.model.User;
 import com.study.springapp.repository.UserRepository;
@@ -24,41 +23,33 @@ import com.study.springapp.services.UserService;
 
 @RestController
 public class AuthController {
-	
+
 	@Autowired
 	private UserRepository userRepo;
-	
+
 	@Autowired
 	private UserService userService;
-	
-	
+
 	@GetMapping("/signin")
-	public ResponseEntity<User> signinHandler(Authentication auth) throws BadCredentialsException{
-		
+	public ResponseEntity<User> signinHandler(Authentication auth) throws BadCredentialsException {
 
-		
-		 try {
-		        User user = userRepo.findByEmail(auth.getName())
-		            .orElseThrow(() -> new BadCredentialsException("Invalid Username or password"));
-		        return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
-		    } catch (BadCredentialsException ex) {
-		        throw new BadCredentialsException("Invalid username or password");
-		    }
-	
+		try {
+			User user = userRepo.findByEmail(auth.getName())
+					.orElseThrow(() -> new BadCredentialsException("Invalid Username or password"));
+			return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
+		} catch (BadCredentialsException ex) {
+			throw new BadCredentialsException("Invalid username or password");
+		}
+
 	}
-	
+
 	@PostMapping("/signup")
-	public ResponseEntity<User> registerUserHandler(@RequestBody User user) throws UserException{
-		
+	public ResponseEntity<User> registerUserHandler(@RequestBody User user) throws UserException {
 
-		
-		User createdUser=userService.registerUser(user);
-		
-		return new ResponseEntity<User>(createdUser,HttpStatus.CREATED);
-		
-		
+		User createdUser = userService.registerUser(user);
+
+		return new ResponseEntity<User>(createdUser, HttpStatus.CREATED);
+
 	}
-	
-	
 
 }

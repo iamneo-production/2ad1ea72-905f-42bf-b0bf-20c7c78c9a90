@@ -29,7 +29,7 @@ const Signin = () => {
   const toast = useToast();
 
   const token = localStorage.getItem("token");
-  console.log("token in signin page ", token);
+  console.log("token in signin page ", token)
   console.log("reqUser -: ", user);
   useEffect(() => {
     if (token) dispatch(getUserProfileAction(token || signin));
@@ -59,7 +59,7 @@ const Signin = () => {
         <Box p={8} display="flex" flexDirection="column" alignItems="center">
           <img
             className="border border-red-800 mb-5"
-            src="https://i.imgur.com/zqpwkLQ.png"
+            src="https://res.cloudinary.com/dybo4pw89/image/upload/v1689939537/logo_jcdwhq.jpg"
             alt=""
           />
 
@@ -99,15 +99,13 @@ const Signin = () => {
                         id="password"
                         placeholder="Password"
                       />
-                      <FormErrorMessage>
-                        {form.errors.password}
-                      </FormErrorMessage>
+                      <FormErrorMessage>{form.errors.password}</FormErrorMessage>
                     </FormControl>
                   )}
                 </Field>
                 <p className="text-center">
                   People who use our service may have uploaded your contact
-                  information to Instagram. Learn More
+                  information to SocioGram. Learn More
                 </p>
                 <p className="mt-5 text-center">
                   By signing up, you agree to our Terms , Privacy Policy and
@@ -126,18 +124,11 @@ const Signin = () => {
             )}
           </Formik>
         </Box>
+
       </div>
 
       <div className="w-full border border-slate-300 mt-5">
-        <p className="text-center py-2">
-          If You Don't Have Already Account{" "}
-          <span
-            onClick={() => navigate("/signup")}
-            className="ml-2 text-blue-700 cursor-pointer"
-          >
-            Sign Up
-          </span>
-        </p>
+        <p className="text-center py-2">If You Don't Have Already Account <span onClick={() => navigate("/signup")} className="ml-2 text-blue-700 cursor-pointer">Sign Up</span></p>
       </div>
     </div>
   );

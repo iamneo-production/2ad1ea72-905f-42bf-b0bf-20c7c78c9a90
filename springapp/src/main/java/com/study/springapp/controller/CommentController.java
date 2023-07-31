@@ -55,6 +55,4 @@ public class CommentController {
 		
 		return new ResponseEntity<Comments>(likedComment,HttpStatus.OK);
 	}
-	
-
 }

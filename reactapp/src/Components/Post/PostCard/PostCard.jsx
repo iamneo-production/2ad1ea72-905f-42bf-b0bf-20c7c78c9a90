@@ -1,14 +1,7 @@
 import { useDisclosure } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { 
-  BsBookmark,
-  BsBookmarkFill,
-  BsDot, 
-  BsEmojiSmile, 
-  BsThreeDots 
-} from "react-icons/bs";
-
+import { BsBookmark, BsBookmarkFill, BsDot, BsEmojiSmile, BsThreeDots } from "react-icons/bs";
 import { FaRegComment } from "react-icons/fa";
 import { RiSendPlaneLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,8 +20,8 @@ import {
   unLikePostAction,
   unSavePostAction,
 } from "../../../Redux/Post/Action";
-
 import CommentModal from "../../Comment/CommentModal";
+
 import "./PostCard.css";
 
 const PostCard = ({
@@ -255,21 +248,20 @@ const PostCard = ({
               View all {post?.comments?.length} comments
             </p>
           )}
-         
+
         </div>
-        
+
         <div className="border border-t w-full">
           <div className="w-full flex items-center px-5">
-             <BsEmojiSmile className=""/>
-           <input
-            onKeyPress={handleOnEnterPress}
-            onChange={handleCommnetInputChange}
-            className="commentInput"
-            type="text"
-            placeholder="Add a comment..."
-          />
+            <BsEmojiSmile className="" />
+            <input
+              onKeyPress={handleOnEnterPress}
+              onChange={handleCommnetInputChange}
+              className="commentInput"
+              type="text"
+              placeholder="Add a comment..."
+            />
           </div>
-         
         </div>
       </div>
 
