@@ -149,7 +149,7 @@ const EditProfileForm = () => {
               />
               <FormHelperText className="text-xs">
                 In most cases, you'll be able to change your username back to
-                ashok.zarmariya for another 14 days. Learn more
+                the previous one for another 14 days. Learn more
               </FormHelperText>
             </div>
           </FormControl>
@@ -164,7 +164,7 @@ const EditProfileForm = () => {
               />
               <FormHelperText className="text-xs">
                 Editing your links is only available on mobile. Visit the
-                Instagram app and edit your profile to change the websites in
+                SocioGram app and edit your profile to change the websites in
                 your bio.
               </FormHelperText>
             </div>
@@ -232,7 +232,7 @@ const EditProfileForm = () => {
 
           <div>
             <Button colorScheme="blue" type="submit" className="">
-              submit
+              Submit
             </Button>
           </div>
         </Stack>

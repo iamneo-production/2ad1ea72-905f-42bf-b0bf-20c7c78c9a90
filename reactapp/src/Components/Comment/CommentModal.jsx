@@ -1,97 +1,184 @@
-import React, { useState } from 'react'
-import { Modal, ModalContent, ModalOverlay, ModalBody } from '@chakra-ui/react'
-import { BsThreeDots } from 'react-icons/bs'
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
-import { FaRegComment } from 'react-icons/fa'
-import { RiSendPlaneLine } from 'react-icons/ri'
-import { BsBookmarkFill, BsBookmark, BsEmojiSmile } from 'react-icons/bs'
-import './CommentModal.css'
-import CommentCard from './CommentCard'
+import {
+  Button,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+} from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import {
+  BsBookmark,
+  BsBookmarkFill,
+  BsEmojiSmile,
+  BsThreeDots,
+} from "react-icons/bs";
+import { FaRegComment } from "react-icons/fa";
+import { RiSendPlaneLine } from "react-icons/ri";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { timeDifference } from "../../Config/Logic";
+import { createComment } from "../../Redux/Comment/Action";
+import { findPostByIdAction } from "../../Redux/Post/Action";
+import CommentCard from "./CommentCard";
+import "./CommentModal.css";
 
-const CommentModal = ({ onClose, isOpen }) => {
-  const [isPostLiked, setIsPostLiked] = useState(false);
-  const [isSaved, setIsSaved] = useState(false);
-  const handlePostLike = () => {
-    setIsPostLiked(!isPostLiked);
-  }
+const CommentModal = ({
+  isOpen,
+  onClose,
+  onOpen,
+  postData,
+  handleLikePost,
+  handleUnLikePost,
+  handleSavePost,
+  handleUnSavePost,
+  isPostLiked,
+  isSaved,
+}) => {
+  const dispatch = useDispatch();
+  const jwt = localStorage.getItem("token");
+  const { post, comments } = useSelector((store) => store);
+  const [commentContent, setCommentContent] = useState("");
+  const { postId } = useParams();
+  const navigate = useNavigate();
+  // console.log("comments :",comments)
+  useEffect(() => {
+    dispatch(
+      findPostByIdAction({
+        jwt,
+        postId,
+      })
+    );
+  }, [postId, comments?.createdComment]);
 
-  const handleSave = () => {
-    setIsSaved(!isSaved);
+  const handleAddComment = () => {
+    const data = {
+      jwt,
+      postId,
+      data: {
+        content: commentContent,
+      },
+    };
+    console.log("comment content ", commentContent);
+    dispatch(createComment(data));
+    setCommentContent("")
+  };
+
+  const handleCommnetInputChange = (e) => {
+    setCommentContent(e.target.value);
+  };
+  const handleOnEnterPress = (e) => {
+    if (e.key === "Enter") {
+      handleAddComment();
+
+    } else return;
+  };
+
+  const handleClose = () => {
+    onClose()
+    navigate("/")
   }
   return (
     <div>
-      <div>
-        <Modal size={"4xl"} onClose={onClose} isOpen={isOpen} isCentered>
-          <ModalOverlay />
-          <ModalContent>
-            {/* <ModalCloseButton /> */}
-            <ModalBody>
-              <div className='flex h-[75vh]'>
-                <div className='w-[45%] flex flex-col justify-center'>
-                  <img className='max-h-full w-full' src="https://cdn.pixabay.com/photo/2022/11/03/20/17/autumn-7568367__340.jpg" alt="" />
-                </div>
-                <div className='w-[55%] pl-10 relative'>
-                  <div className='flex justify-between items-center py-5'>
-                    <div className='flex items-center'>
-                      <div>
-                        <img className='h-9 w-9 rounded-full' src="https://cdn.pixabay.com/photo/2023/03/18/10/43/plum-blossoms-7860381__340.jpg" alt="" />
-                      </div>
-                      <div className='ml-2'>
-                        <p>Username</p>
-                      </div>
-                    </div>
-                    <BsThreeDots />
-                  </div>
-                  <hr />
-                  <div className='comment'>
-                    {[1, 1, 1,].map(() => <CommentCard />)}
-                  </div>
-                  <div className='absolute bottom-0 w-[90%]'>
-                    <div className='flex justify-between items-center w-full py-4'>
-                      <div className='flex items-center space-x-2'>
-                        {isPostLiked ? (
-                          <AiFillHeart
-                            className='text-2xl hover:opacity-50 cursor-pointer text-red-600'
-                            onClick={handlePostLike} />
-                        ) : (
-                          <AiOutlineHeart
-                            className='text-2xl hover:opacity-50 cursor-pointer'
-                            onClick={handlePostLike} />
-                        )
-
+      <Modal size={"4xl"} onClose={handleClose} isOpen={isOpen} isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalBody>
+            <div className="flex h-[75vh] ">
+              <div className="w-[45%] flex flex-col justify-center">
+                <img
+                  className="max-h-full max-w-full"
+                  src={post.singlePost?.image}
+                  alt=""
+                />
+              </div>
+              <div className="w-[55%] pl-10 relative">
+                <div className="reqUser flex justify-between items-center py-5">
+                  <div className="flex items-center">
+                    <div className="">
+                    <img
+                        className="w-9 h-9 rounded-full"
+                        src={
+                          post.singlePost?.user?.userImage || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                         }
-                        <FaRegComment className='text-xl hover:opacity-50 cursor-pointer' />
-                        <RiSendPlaneLine className='text-xl hover:opacity-50 cursor-pointer' />
-                      </div>
-                      <div className='cursor-pointer'>
-                        {isSaved ? (
-                          <BsBookmarkFill
-                            className='text-xl hover:opacity-50 cursor-pointer'
-                            onClick={handleSave} />
-                        ) : (
-                          <BsBookmark className='text-xl hover:opacity-50 cursor-pointer'
-                            onClick={handleSave} />
-                        )}
-                      </div>
+                        alt=""
+                      />
                     </div>
-                    <div className='w-full py-2'>
-                      <p>10 Likes</p>
-                      <p className='opacity-50 text-sm'>1 day ago</p>
+                    <div className="ml-3">
+                      <p>{post?.singlePost?.user?.name}</p>
+                      <p>{post?.singlePost?.user?.username}</p>
                     </div>
+                  </div>
+                  <BsThreeDots />
+                </div>
+                <hr />
 
-                    <div className='flex items-center w-full'>
-                      <BsEmojiSmile />
-                      <input className='commentInputs' type='text' placeholder='Add a comment...' />
+                <div className="comments ">
+                  {post?.singlePost?.comments?.length > 0 &&
+                    post?.singlePost?.comments.map((item) => <CommentCard comment={item} />)}
+                </div>
+
+                <div className=" absolute bottom-0 w-[90%]">
+                  <div className="flex justify-between items-center w-full mt-5">
+                    <div className="flex items-center space-x-2 ">
+                      {isPostLiked ? (
+                        <AiFillHeart
+                          onClick={handleUnLikePost}
+                          className="text-2xl hover:opacity-50 cursor-pointer text-red-600"
+                        />
+                      ) : (
+                        <AiOutlineHeart
+                          onClick={handleLikePost}
+                          className="text-2xl hover:opacity-50 cursor-pointer "
+                        />
+                      )}
+
+                      <FaRegComment className="text-xl hover:opacity-50 cursor-pointer" />
+                      <RiSendPlaneLine className="text-xl hover:opacity-50 cursor-pointer" />
                     </div>
+                    <div className="cursor-pointer">
+                      {isSaved ? (
+                        <BsBookmarkFill
+                          onClick={() => handleUnSavePost(post.singlePost?.id)}
+                          className="text-xl"
+                        />
+                      ) : (
+                        <BsBookmark
+                          onClick={() => handleSavePost(post.singlePost?.id)}
+                          className="text-xl hover:opacity-50 cursor-pointer"
+                        />
+                      )}
+                    </div>
+                  </div>
+                  {post.singlePost?.likedByUsers?.length > 0 && (
+                    <p className="text-sm font-semibold py-2">
+                      {post.singlePost?.likedByUsers?.length} likes{" "}
+                    </p>
+                  )}
+                  <p className="opacity-70 pb-5">
+                    {timeDifference(post?.singlePost?.createdAt)}
+                  </p>
+                  <div className=" flex items-center ">
+                    <BsEmojiSmile className="mr-3 text-xl" />
+                    <input
+                      className="commentInput w-[70%]"
+                      placeholder="Add Comment..."
+                      type="text"
+                      onKeyPress={handleOnEnterPress}
+                      onChange={handleCommnetInputChange}
+                      value={commentContent}
+                    />
                   </div>
                 </div>
               </div>
-            </ModalBody>
-          </ModalContent>
-        </Modal>
-      </div>
+            </div>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </div>
-  )
-}
+  );
+};
 
-export default CommentModal
+export default CommentModal;
