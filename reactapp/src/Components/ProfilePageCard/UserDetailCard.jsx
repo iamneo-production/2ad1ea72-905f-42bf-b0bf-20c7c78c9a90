@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { followUserAction, unFollowUserAction } from "../../Redux/User/Action";
 import { isReqUser } from '../../Config/Logic'
+import Followers from "./Followers";
+import Following from "./Following";
+
 
 const UserDetailCard = ({ user, isRequser, isFollowing }) => {
   const token = localStorage.getItem("token");
@@ -11,6 +14,8 @@ const UserDetailCard = ({ user, isRequser, isFollowing }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isFollow, setIsFollow] = useState(false);
+  const [showFollowers, setShowFollowers] = useState(false);
+  const [showFollowing, setShowFollowing] = useState(false);
 
   const goToAccountEdit = () => {
     navigate("/account/edit");
@@ -51,9 +56,8 @@ const UserDetailCard = ({ user, isRequser, isFollowing }) => {
           />
         </div>
 
-
         <div className="ml-10 space-y-5 text-xs">
-          <div className=" flex space-x-10 items-center">
+          <div className="flex space-x-10 items-center">
             <p className="text-base">{user?.username}</p>
             <button className="text-xs py-1 px-5 bg-slate-100 hover:bg-slate-300 rounded-md font-semibold">
               {isRequser ? (
@@ -78,19 +82,24 @@ const UserDetailCard = ({ user, isRequser, isFollowing }) => {
               <span>posts</span>
             </div>
 
-            <div>
+            <div onClick={() => setShowFollowers(!showFollowers)} className="cursor-pointer">
               <span className="font-semibold mr-2">
                 {user?.follower?.length}
               </span>
               <span>followers</span>
             </div>
-            <div>
+
+            <div onClick={() => setShowFollowing(!showFollowing)} className="cursor-pointer">
               <span className="font-semibold mr-2">
                 {user?.following?.length}
               </span>
               <span>following</span>
             </div>
           </div>
+
+          {showFollowers && <Followers followers={user?.follower} />}
+          {showFollowing && <Following following={user?.following} />}
+
           <div>
             <p className="font-semibold">{user?.name}</p>
             <p className="font-thin text-sm">{user?.bio}</p>
@@ -101,5 +110,4 @@ const UserDetailCard = ({ user, isRequser, isFollowing }) => {
   );
 };
 
-
-export default UserDetailCard
+export default UserDetailCard;
