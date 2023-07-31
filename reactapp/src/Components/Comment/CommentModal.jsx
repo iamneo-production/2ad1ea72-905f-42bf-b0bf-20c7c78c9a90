@@ -39,11 +39,11 @@ const CommentModal = ({
 }) => {
   const dispatch = useDispatch();
   const jwt = localStorage.getItem("token");
-  const { post,comments } = useSelector((store) => store);
+  const { post, comments } = useSelector((store) => store);
   const [commentContent, setCommentContent] = useState("");
   const { postId } = useParams();
-  const navigate=useNavigate();
-// console.log("comments :",comments)
+  const navigate = useNavigate();
+  // console.log("comments :",comments)
   useEffect(() => {
     dispatch(
       findPostByIdAction({
@@ -51,7 +51,7 @@ const CommentModal = ({
         postId,
       })
     );
-  }, [postId,comments?.createdComment]);
+  }, [postId, comments?.createdComment]);
 
   const handleAddComment = () => {
     const data = {
@@ -72,11 +72,11 @@ const CommentModal = ({
   const handleOnEnterPress = (e) => {
     if (e.key === "Enter") {
       handleAddComment();
-      
+
     } else return;
   };
 
-  const handleClose=()=>{
+  const handleClose = () => {
     onClose()
     navigate("/")
   }
@@ -98,10 +98,10 @@ const CommentModal = ({
                 <div className="reqUser flex justify-between items-center py-5">
                   <div className="flex items-center">
                     <div className="">
-                      <img
+                    <img
                         className="w-9 h-9 rounded-full"
                         src={
-                          "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                          post.singlePost?.user?.userImage || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                         }
                         alt=""
                       />
