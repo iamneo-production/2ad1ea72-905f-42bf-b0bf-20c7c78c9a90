@@ -22,7 +22,11 @@
 	</natures>
 	<filteredResources>
 		<filter>
+<<<<<<< HEAD
+			<id>1683007000489</id>
+=======
 			<id>1682930848487</id>
+>>>>>>> d4a693242b586124ff29128fcd2908e6cef8bf16
 			<name></name>
 			<type>30</type>
 			<matcher>
@@ -32,6 +36,8 @@
 		</filter>
 	</filteredResources>
 </projectDescription>
+<<<<<<< HEAD
+=======
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>iamneo-production_2ad1ea72-905f-42bf-b0bf-20c7c78c9a90</name>
@@ -74,3 +80,4 @@
 		</filter>
 	</filteredResources>
 </projectDescription>
+>>>>>>> d4a693242b586124ff29128fcd2908e6cef8bf16
