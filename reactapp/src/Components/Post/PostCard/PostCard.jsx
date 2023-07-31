@@ -12,6 +12,7 @@ import {
   isSavedPost,
 } from "../../../Config/Logic";
 
+
 import { createComment } from "../../../Redux/Comment/Action";
 import {
   deletePostAction,
@@ -254,6 +255,7 @@ const PostCard = ({
         <div className="border border-t w-full">
           <div className="w-full flex items-center px-5">
             <BsEmojiSmile className="" />
+            
             <input
               onKeyPress={handleOnEnterPress}
               onChange={handleCommnetInputChange}
